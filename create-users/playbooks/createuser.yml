@@ -1,0 +1,15 @@
+---
+- hosts: all
+  tasks:
+  - name: Create a login user
+    user:
+      name: kubeuser
+      password: '$6$hY8AHroSpcvOKC$B9aP9iH3/RSBOMD2jdfJiSLt3s4yDm4bwPkc4eQSlRwGjRtfe6Z.v4QzaRw0QCyNgOCAR.qOlomcKbdFzpPA61' # kubeuser
+      groups: wheel, users   # Empty by default.
+      state: present
+      shell: /bin/bash       # Defaults to /bin/bash
+      system: no             # Defaults to no
+      createhome: yes        # Defaults to yes
+      home: /home/kubeuser   # Defaults to /home/<username>
+
+
